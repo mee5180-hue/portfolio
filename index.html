@@ -3,155 +3,350 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RESOLE BARRIER LOTION</title>
+<title>NAVY : PORTFOLIO</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  overflow-x: hidden;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0f;
+  --surface:#12121a;
+  --surface2:#1a1a26;
+  --border:#2a2a3a;
+  --text:#f0f0f5;
+  --text-mid:#9090a8;
+  --text-light:#55556a;
+  --accent:#c8a96e;
+  --accent-dark:#a08050;
+  --white:#fff;
 }
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%}
 
-img, video {
-  vertical-align: top;
-  display: block;
+/* NOTICE */
+.notice-bar{background:var(--accent);color:#1a1000;text-align:center;padding:9px;font-size:12px;letter-spacing:.08em;font-weight:500}
+
+/* HEADER */
+header{background:rgba(10,10,15,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.header-top{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:18px 24px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;letter-spacing:.22em;color:var(--white)}
+.logo span{color:var(--accent)}
+.header-icons{display:flex;gap:20px;align-items:center}
+.header-icons a{font-size:11px;color:var(--text-mid);letter-spacing:.06em;display:flex;flex-direction:column;align-items:center;gap:4px;transition:color .2s}
+.header-icons a:hover{color:var(--accent)}
+.icon-svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.cart-wrap{position:relative}
+.cart-count{background:var(--accent);color:#1a1000;font-size:10px;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:absolute;top:-6px;right:-6px;font-weight:700}
+nav{border-top:1px solid var(--border)}
+nav ul{list-style:none;display:flex;justify-content:center;max-width:1200px;margin:0 auto;padding:0 24px;gap:36px}
+nav ul li a{display:block;padding:13px 0;font-size:12px;letter-spacing:.1em;color:var(--text-mid);font-weight:400;transition:color .2s;text-transform:uppercase}
+nav ul li a:hover{color:var(--accent)}
+
+/* HERO SLIDER */
+.hero-slider{position:relative;width:100%;overflow:hidden;background:var(--surface)}
+.slider-track{display:flex;transition:transform .7s cubic-bezier(.4,0,.2,1)}
+.slide{min-width:100%;position:relative}
+.slide img{width:100%;height:auto;display:block}
+.slider-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;background:rgba(10,10,15,.7);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;transition:all .2s}
+.slider-btn:hover{background:var(--accent);border-color:var(--accent)}
+.slider-btn:hover svg{stroke:#1a1000}
+.slider-btn svg{width:18px;height:18px;stroke:var(--text);fill:none;stroke-width:2;stroke-linecap:round}
+.slider-btn.prev{left:20px}
+.slider-btn.next{right:20px}
+.slider-dots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
+.dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);border:1px solid rgba(255,255,255,.5);cursor:pointer;transition:all .2s}
+.dot.active{background:var(--accent);border-color:var(--accent);transform:scale(1.3)}
+
+/* BRAND STRIP */
+.brand-strip{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px 0;overflow:hidden}
+.brand-scroll{display:flex;gap:48px;align-items:center;animation:scroll-brands 24s linear infinite;width:max-content}
+.brand-scroll span{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.18em;color:var(--text-light);white-space:nowrap}
+.brand-scroll span.dot-sep{color:var(--accent);font-size:10px}
+@keyframes scroll-brands{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* SECTION */
+.section{max-width:1200px;margin:0 auto;padding:70px 24px}
+.section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;letter-spacing:.06em;color:var(--white)}
+.section-title span{color:var(--accent)}
+.section-sub{font-size:12px;color:var(--text-light);margin-top:6px;letter-spacing:.06em}
+.view-all{font-size:11px;color:var(--text-mid);letter-spacing:.1em;border-bottom:1px solid var(--border);padding-bottom:2px;text-transform:uppercase;transition:color .2s}
+.view-all:hover{color:var(--accent)}
+
+/* CAT TABS */
+.cat-tabs{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap}
+.cat-tab{padding:8px 20px;font-size:11px;letter-spacing:.1em;border:1px solid var(--border);background:transparent;color:var(--text-mid);cursor:pointer;transition:all .2s;text-transform:uppercase;font-family:inherit}
+.cat-tab.active,.cat-tab:hover{background:var(--accent);color:#1a1000;border-color:var(--accent);font-weight:500}
+
+/* PRODUCT GRID */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
+.product-card{background:var(--surface);border:1px solid var(--border);transition:transform .2s,box-shadow .2s,border-color .2s;cursor:pointer;display:block;color:inherit}
+.product-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.4);border-color:var(--accent)}
+.product-img{aspect-ratio:1/1;overflow:hidden;background:var(--surface2);position:relative}
+.product-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.product-card:hover .product-img img{transform:scale(1.04)}
+.badge{position:absolute;top:12px;left:12px;font-size:10px;letter-spacing:.08em;padding:4px 10px;font-weight:600}
+.badge-new{background:var(--accent);color:#1a1000}
+.badge-best{background:var(--white);color:#1a1000}
+.badge-sale{background:#c0392b;color:#fff}
+.wishlist-btn{position:absolute;top:12px;right:12px;width:32px;height:32px;background:rgba(10,10,15,.7);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s}
+.product-card:hover .wishlist-btn{opacity:1}
+.wishlist-btn svg{width:14px;height:14px;stroke:var(--text);fill:none;stroke-width:1.5}
+.product-info{padding:16px;border-top:1px solid var(--border)}
+.product-brand{font-size:10px;color:var(--accent);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;font-weight:500}
+.product-name{font-size:13px;color:var(--text);margin-bottom:10px;line-height:1.5}
+.product-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.product-tag{font-size:10px;padding:3px 8px;background:var(--surface2);color:var(--text-mid);border:1px solid var(--border);letter-spacing:.04em}
+.product-price{display:flex;align-items:baseline;gap:8px}
+.price-original{font-size:11px;color:var(--text-light);text-decoration:line-through}
+.price-sale{font-size:16px;font-weight:700;color:#e74c3c}
+.price-normal{font-size:16px;font-weight:700;color:var(--white)}
+.product-footer{padding:12px 16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.stars{display:flex;gap:2px;align-items:center}
+.star{color:var(--accent);font-size:11px}
+.review-count{font-size:11px;color:var(--text-light);margin-left:4px}
+.add-cart-btn{font-size:11px;padding:7px 14px;background:var(--accent);color:#1a1000;border:none;letter-spacing:.06em;cursor:pointer;font-family:inherit;font-weight:600;transition:background .2s}
+.add-cart-btn:hover{background:var(--accent-dark)}
+
+/* BENEFITS */
+.benefits{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 24px}
+.benefits-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.benefit-item{text-align:center;padding:16px}
+.benefit-icon{width:40px;height:40px;margin:0 auto 14px;stroke:var(--accent);fill:none;stroke-width:1.2;stroke-linecap:round}
+.benefit-title{font-size:13px;font-weight:500;letter-spacing:.06em;margin-bottom:6px;color:var(--white)}
+.benefit-desc{font-size:11.5px;color:var(--text-light);line-height:1.6}
+
+/* BANNER */
+.banner-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.banner-inner{max-width:1200px;margin:0 auto;padding:60px 24px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.banner-card{padding:48px 40px;display:flex;flex-direction:column;justify-content:center;min-height:220px;border:1px solid var(--border);position:relative;overflow:hidden;transition:border-color .2s}
+.banner-card:hover{border-color:var(--accent)}
+.banner-card-a{background:linear-gradient(135deg,#1a1508,#12120a)}
+.banner-card-b{background:linear-gradient(135deg,#0a1218,#080f14)}
+.banner-eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.banner-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;line-height:1.3;margin-bottom:14px;color:var(--white)}
+.banner-desc{font-size:12.5px;color:var(--text-mid);margin-bottom:24px;line-height:1.7}
+.btn-link{font-size:11px;letter-spacing:.12em;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:2px;display:inline-block;width:fit-content;transition:opacity .2s;text-transform:uppercase}
+.btn-link:hover{opacity:.7}
+
+/* NEWSLETTER */
+.newsletter{background:var(--surface2);border-top:1px solid var(--border);padding:70px 24px;text-align:center}
+.newsletter-inner{max-width:480px;margin:0 auto}
+.newsletter h2{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;margin-bottom:10px;color:var(--white)}
+.newsletter p{font-size:13px;color:var(--text-mid);margin-bottom:28px;line-height:1.7}
+.newsletter-form{display:flex;max-width:380px;margin:0 auto}
+.newsletter-input{flex:1;padding:13px 16px;border:1px solid var(--border);background:var(--surface);font-size:13px;font-family:inherit;outline:none;color:var(--text);border-right:none}
+.newsletter-input:focus{border-color:var(--accent)}
+.newsletter-input::placeholder{color:var(--text-light)}
+.newsletter-btn{padding:13px 22px;background:var(--accent);color:#1a1000;border:none;font-size:12px;letter-spacing:.08em;font-family:inherit;white-space:nowrap;cursor:pointer;font-weight:600;transition:background .2s}
+.newsletter-btn:hover{background:var(--accent-dark)}
+
+/* FOOTER */
+footer{background:#060608;color:rgba(255,255,255,.4);padding:60px 24px 30px;border-top:1px solid var(--border)}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;letter-spacing:.22em;color:var(--white);display:block;margin-bottom:16px}
+.footer-logo span{color:var(--accent)}
+.footer-brand p{font-size:12px;line-height:1.8;color:rgba(255,255,255,.3)}
+.footer-col h4{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:18px;font-weight:500}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:12.5px;color:rgba(255,255,255,.3);transition:color .2s}
+.footer-col ul li a:hover{color:var(--accent)}
+.footer-bottom{max-width:1200px;margin:24px auto 0;display:flex;justify-content:space-between;align-items:center;font-size:11px}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .header-top{padding:12px 16px;gap:8px}
+  .header-top input{display:none}
+  .header-icons{gap:12px}
+  .header-icons a span{display:none}
+  .header-icons a{gap:0}
+  .logo{font-size:18px}
+  nav ul{gap:0;overflow-x:auto;padding:0 8px 4px;flex-wrap:nowrap;justify-content:flex-start;scrollbar-width:none}
+  nav ul::-webkit-scrollbar{display:none}
+  nav ul li{flex-shrink:0}
+  nav ul li a{padding:12px 12px;white-space:nowrap}
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .benefits-inner{grid-template-columns:repeat(2,1fr)}
+  .banner-inner{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:28px}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+  .section{padding:50px 16px}
+  .slider-btn{width:36px;height:36px}
 }
-
-.detail-page {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* 정적 이미지 씬 */
-.detail-image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* 영상 씬 */
-.video-scene {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.video-scene video {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.video-text-overlay {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-  pointer-events: none;
-  display: block;
+@media(max-width:480px){
+  .footer-inner{grid-template-columns:1fr}
+  .benefits-inner{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
 <body>
-<div class="detail-page">
 
-  <!-- S01: VIDEO -->
-  <div class="video-scene">
-    <video autoplay muted loop playsinline preload="metadata" poster="assets/S01.png">
-      <source src="assets/S01.mp4" type="video/mp4">
-    </video>
-    <img class="video-text-overlay" src="assets/text_S01.png" alt="">
+<div class="notice-bar">✦ 포트폴리오 문의 · 외주 제작 상담 환영합니다 ✦</div>
+
+<header>
+  <div class="header-top">
+    <a href="index.html" class="logo">NAVY <span>:</span> PORTFOLIO</a>
+    <div class="header-icons">
+      <a href="#"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Contact</span></a>
+      <a href="#"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Saved</span></a>
+      <a href="#" class="cart-wrap"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><div class="cart-count">1</div><span>Cart</span></a>
+    </div>
   </div>
+  <nav><ul>
+    <li><a href="#">New</a></li>
+    <li><a href="#">Best</a></li>
+    <li><a href="#">Skin Care</a></li>
+    <li><a href="#">Body Care</a></li>
+    <li><a href="#">Hair Care</a></li>
+    <li><a href="#">Cleansing</a></li>
+    <li><a href="#">Brand</a></li>
+    <li><a href="#" style="color:#e74c3c">Sale</a></li>
+  </ul></nav>
+</header>
 
-  <!-- S02: IMAGE -->
-  <img class="detail-image" src="assets/S02.png" alt="" loading="lazy">
-
-  <!-- S03: IMAGE -->
-  <img class="detail-image" src="assets/S03.png" alt="" loading="lazy">
-
-  <!-- S04: IMAGE -->
-  <img class="detail-image" src="assets/S04.png" alt="" loading="lazy">
-
-  <!-- S05: IMAGE -->
-  <img class="detail-image" src="assets/S05.png" alt="" loading="lazy">
-
-  <!-- S06: VIDEO -->
-  <div class="video-scene">
-    <video autoplay muted loop playsinline preload="metadata" poster="assets/S06.png">
-      <source src="assets/S06.mp4" type="video/mp4">
-    </video>
-    <img class="video-text-overlay" src="assets/text_S06.png" alt="">
+<!-- HERO SLIDER -->
+<section class="hero-slider">
+  <div class="slider-track" id="sliderTrack">
+    <div class="slide" onclick="location.href='product-resole.html'" style="cursor:pointer;">
+      <img src="banner-resole.png" alt="RESOLE RADIANCE BODY MIST">
+    </div>
   </div>
+  <button class="slider-btn prev" onclick="moveSlide(-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+  <button class="slider-btn next" onclick="moveSlide(1)"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+  <div class="slider-dots"><div class="dot active" onclick="goSlide(0)"></div></div>
+</section>
 
-  <!-- S07: IMAGE -->
-  <img class="detail-image" src="assets/S07.png" alt="" loading="lazy">
+<script>
+let current=0,total=1;
+const track=document.getElementById('sliderTrack');
+const dots=document.querySelectorAll('.dot');
+function updateSlider(){track.style.transform='translateX(-'+(current*100)+'%)';dots.forEach((d,i)=>d.classList.toggle('active',i===current))}
+function moveSlide(dir){current=(current+dir+total)%total;updateSlider()}
+function goSlide(idx){current=idx;updateSlider()}
+if(total>1)setInterval(()=>moveSlide(1),4500);
+</script>
 
-  <!-- S08: IMAGE -->
-  <img class="detail-image" src="assets/S08.png" alt="" loading="lazy">
-
-  <!-- S09: IMAGE -->
-  <img class="detail-image" src="assets/S09.png" alt="" loading="lazy">
-
-  <!-- S10: VIDEO -->
-  <div class="video-scene">
-    <video autoplay muted loop playsinline preload="metadata" poster="assets/S10.png">
-      <source src="assets/S10.mp4" type="video/mp4">
-    </video>
-    <img class="video-text-overlay" src="assets/text_S10.png" alt="">
+<!-- BRAND STRIP -->
+<div class="brand-strip">
+  <div class="brand-scroll">
+    <span>RESOLE</span><span class="dot-sep">✦</span>
+    <span>SUMBONI</span><span class="dot-sep">✦</span>
+    <span>PERNU</span><span class="dot-sep">✦</span>
+    <span>AECLIVE</span><span class="dot-sep">✦</span>
+    <span>LOHAROHEE</span><span class="dot-sep">✦</span>
+    <span>RESOLE</span><span class="dot-sep">✦</span>
+    <span>SUMBONI</span><span class="dot-sep">✦</span>
+    <span>PERNU</span><span class="dot-sep">✦</span>
+    <span>AECLIVE</span><span class="dot-sep">✦</span>
+    <span>LOHAROHEE</span><span class="dot-sep">✦</span>
   </div>
-
-  <!-- S11: IMAGE -->
-  <img class="detail-image" src="assets/S11.png" alt="" loading="lazy">
-
-  <!-- S12: IMAGE -->
-  <img class="detail-image" src="assets/S12.png" alt="" loading="lazy">
-
-  <!-- S13: IMAGE -->
-  <img class="detail-image" src="assets/S13.png" alt="" loading="lazy">
-
-  <!-- S14: VIDEO -->
-  <div class="video-scene">
-    <video autoplay muted loop playsinline preload="metadata" poster="assets/S14.png">
-      <source src="assets/S14.mp4" type="video/mp4">
-    </video>
-    <img class="video-text-overlay" src="assets/text_S14.png" alt="">
-  </div>
-
-  <!-- S15: IMAGE -->
-  <img class="detail-image" src="assets/S15.png" alt="" loading="lazy">
-
-  <!-- S16: IMAGE -->
-  <img class="detail-image" src="assets/S16.png" alt="" loading="lazy">
-
-  <!-- S17: IMAGE -->
-  <img class="detail-image" src="assets/S17.png" alt="" loading="lazy">
-
-  <!-- S18: IMAGE -->
-  <img class="detail-image" src="assets/S18.png" alt="" loading="lazy">
-
-  <!-- S18-1: IMAGE -->
-  <img class="detail-image" src="assets/S18-1.png" alt="" loading="lazy">
-
-  <!-- S19: IMAGE -->
-  <img class="detail-image" src="assets/S19.png" alt="" loading="lazy">
-
-  <!-- S20: IMAGE -->
-  <img class="detail-image" src="assets/S20.png" alt="" loading="lazy">
-
-  <!-- S21: IMAGE -->
-  <img class="detail-image" src="assets/S21.png" alt="" loading="lazy">
-
-  <!-- S22: IMAGE -->
-  <img class="detail-image" src="assets/S22.png" alt="" loading="lazy">
-
-  <!-- S23: IMAGE -->
-  <img class="detail-image" src="assets/S23.png" alt="" loading="lazy">
-
 </div>
+
+<!-- BEST -->
+<div class="section">
+  <div class="section-header">
+    <div>
+      <div class="section-title">Best <span>Seller</span></div>
+      <div class="section-sub">포트폴리오 대표 작업물</div>
+    </div>
+    <a href="#" class="view-all">View All →</a>
+  </div>
+  <div class="cat-tabs">
+    <button class="cat-tab active">All</button>
+    <button class="cat-tab">Skin Care</button>
+    <button class="cat-tab">Body Care</button>
+    <button class="cat-tab">Hair Care</button>
+  </div>
+  <div class="product-grid">
+    <a href="product-resole.html" class="product-card">
+      <div class="product-img">
+        <img src="thumb-resole.png" alt="RESOLE RADIANCE BODY MIST">
+        <div class="badge badge-new">NEW</div>
+        <button class="wishlist-btn" onclick="event.preventDefault()"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">RESOLE</div>
+        <div class="product-name">RADIANCE BODY MIST 100ml</div>
+        <div class="product-tags"><span class="product-tag">수분광채</span><span class="product-tag">바디미스트</span></div>
+        <div class="product-price"><span class="price-normal">38,000원</span></div>
+      </div>
+      <div class="product-footer">
+        <div class="stars"><span class="star">★★★★★</span><span class="review-count">(0)</span></div>
+        <button class="add-cart-btn" onclick="event.preventDefault()">담기</button>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<div class="benefits">
+  <div class="benefits-inner">
+    <div class="benefit-item">
+      <svg class="benefit-icon" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      <div class="benefit-title">무료 배송</div>
+      <div class="benefit-desc">3만원 이상 구매 시<br>전국 무료 배송</div>
+    </div>
+    <div class="benefit-item">
+      <svg class="benefit-icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <div class="benefit-title">정품 보증</div>
+      <div class="benefit-desc">브랜드 직거래<br>100% 정품 보장</div>
+    </div>
+    <div class="benefit-item">
+      <svg class="benefit-icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <div class="benefit-title">30일 반품</div>
+      <div class="benefit-desc">구매 후 30일 이내<br>무료 반품/교환</div>
+    </div>
+    <div class="benefit-item">
+      <svg class="benefit-icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <div class="benefit-title">1:1 상담</div>
+      <div class="benefit-desc">전문 상담사<br>맞춤 제품 추천</div>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+  <div class="newsletter-inner">
+    <h2>뉴스레터 구독</h2>
+    <p>신제품 소식과 프로모션을 가장 먼저 받아보세요.<br>구독 즉시 5% 할인 쿠폰을 드립니다.</p>
+    <div class="newsletter-form">
+      <input class="newsletter-input" type="email" placeholder="이메일 주소를 입력해주세요">
+      <button class="newsletter-btn">구독하기</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo">NAVY <span>:</span> PORTFOLIO</span>
+      <p>코스메틱 패키지 디자인 · 상세페이지 제작<br>AI 콘텐츠 · 브랜드 크리에이티브</p>
+    </div>
+    <div class="footer-col"><h4>작업물</h4><ul>
+      <li><a href="#">신규 작업</a></li>
+      <li><a href="#">패키지 디자인</a></li>
+      <li><a href="#">상세페이지</a></li>
+      <li><a href="#">브랜드 아이덴티티</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>고객지원</h4><ul>
+      <li><a href="#">외주 문의</a></li>
+      <li><a href="#">자주 묻는 질문</a></li>
+      <li><a href="#">배송/반품 안내</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>정보</h4><ul>
+      <li><a href="#">소개</a></li>
+      <li><a href="#">개인정보처리방침</a></li>
+      <li><a href="#">이용약관</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 NAVY : PORTFOLIO. All rights reserved.</span>
+    <span>Design & Creative by NAVY</span>
+  </div>
+</footer>
+
 </body>
 </html>
